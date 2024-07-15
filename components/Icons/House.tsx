@@ -11,11 +11,11 @@ export const House = (
       fill="none"
       preserveAspectRatio="xMidYMid"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      
     >
       <path
         d="M12 27V17.4706H18V27H25.5V14.2941H30L15 0L0 14.2941H4.5V27H12Z"
-        fill="black"
+        fill="currentColor"
       />
     </svg>
   );

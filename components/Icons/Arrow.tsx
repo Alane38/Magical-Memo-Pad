@@ -11,12 +11,12 @@ export const Arrow = (
       fill="none"
       preserveAspectRatio="xMidYMid"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      
     >
       <g clipPath="url(#clip0_337_87)">
         <path
           d="M27.3506 11H6.8335V13H27.3506V16L34.1668 12L27.3506 8V11Z"
-          fill="black"
+          fill="currentColor"
         />
       </g>
       <defs>

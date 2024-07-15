@@ -1,3 +1,4 @@
+import "./globals.css";
 import { Oxygen } from "next/font/google"
 
 const oxygen = Oxygen({
@@ -12,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${oxygen.className} min-h-screen bg-black`} suppressHydrationWarning>
+      <body className={`${oxygen.className} min-h-screen`} suppressHydrationWarning>
         {/* <StrictMode>{children}</StrictMode> */}
         {children}
       </body>
