@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef } from "react";
 
 export const Arrow = (
-  props: ComponentPropsWithoutRef<"svg"> & { size?: number },
+  props: ComponentPropsWithoutRef<"svg"> & { size?: number, className?: string },
 ) => {
   return (
     <svg
@@ -11,7 +11,7 @@ export const Arrow = (
       fill="none"
       preserveAspectRatio="xMidYMid"
       xmlns="http://www.w3.org/2000/svg"
-      
+      className={`${props.className}`}
     >
       <g clipPath="url(#clip0_337_87)">
         <path

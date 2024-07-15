@@ -15,7 +15,7 @@ const resetCounters = () => {
 };
 resetCounters(); // Start the timer
 
-export default async function rateLimit(req: Request) {
+export async function rateLimit(req: Request) {
   const ip = (req.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0] || (req.headers.get('cf-connecting-ip') ?? '127.0.0.1').split(',')[0]
   const clientIp = ({ ip }).ip;
 
