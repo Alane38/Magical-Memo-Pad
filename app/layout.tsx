@@ -1,3 +1,4 @@
+import Sidebar from "@/components/GlobalComponents/Sidebar";
 import "./globals.css";
 import { Oxygen } from "next/font/google"
 
@@ -13,8 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${oxygen.className} min-h-screen`} suppressHydrationWarning>
+      <body className={`${oxygen.className} min-h-screen bg-white flex`} suppressHydrationWarning>
         {/* <StrictMode>{children}</StrictMode> */}
+        <Sidebar />
         {children}
       </body>
     </html>
