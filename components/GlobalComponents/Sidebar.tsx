@@ -47,7 +47,7 @@ export default function Sidebar({}: Props): JSX.Element {
     <>
       <aside
         id="sidebar-level-sidebar"
-        className={`bg-primary z-40 h-screen ${isOpen ? "w-64" : "w-16"} transition-width overflow-y-auto duration-300`}
+        className={`bg-primary z-40 h-auto ${isOpen ? "w-64" : "w-16"} transition-width overflow-y-auto duration-300`}
         aria-label="Sidebar"
       >
         <div className="mb-6 flex w-full items-center justify-between space-x-2 p-3">

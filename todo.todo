@@ -1,0 +1,4 @@
+x Mettre en place un système de création et de gestion de notes.
+x Note doit avoir une propriété magique (par exemple, changement de couleurs, arrière-plan animé, effet lumineux).
+x Les utilisateurs peuvent créer des notes magiques avec un titre, un contenu et une propriété magique choisie.
+x Permettre aux utilisateurs de choisir la propriété magique lors de la création d'une note
