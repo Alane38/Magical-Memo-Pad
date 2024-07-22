@@ -4,10 +4,10 @@ import { RoundedRectangles } from "../Shapes/RoundedRectangles"
 import { BasicShape } from "../Shapes/BasicShape"
 
 type Props = {
-    content: React.ReactNode 
+  children: React.ReactNode
 }
 
-export default function Background({ content }: Props): JSX.Element {
+export default function Background({ children }: Props): JSX.Element {
   return (
     <>
       <div className="absolute z-20 size-full">
@@ -17,7 +17,7 @@ export default function Background({ content }: Props): JSX.Element {
         <BasicShape className=" text-quaternary -translate-y-[3%]" />
       </div>
       <div className="absolute z-30 size-full">
-        {content}
+        {children}
       </div>
     </>
   )

@@ -1,34 +1,18 @@
-import prisma from '@/lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
+import prisma from '@/lib/prisma';
 
 export async function GET() {
-  const memos = await prisma.memo.findMany({
-    include: {
-      magicProperty: true,
-    },
-  });
+  const memos = await prisma.memo.findMany();
   return NextResponse.json(memos);
 }
 
 export async function POST(req: NextRequest) {
   const { title, content, magicPropertyType } = await req.json();
 
-  const magicProperty = await prisma.magicProperty.create({
-    data: {
-      type: magicPropertyType,
-      description: 'Auto-generated description'
-    },
+  const newMemo = await prisma.memo.create({
+    data: { title, content, magicProperty: magicPropertyType },
   });
 
-  const newNote = await prisma.memo.create({
-    data: {
-      title,
-      content,
-      magicProperty: {
-        connect: { id: magicProperty.id },
-      },
-    },
-  });
+  return NextResponse.json(newMemo);
 
-  return NextResponse.json(newNote, { status: 201 });
 }

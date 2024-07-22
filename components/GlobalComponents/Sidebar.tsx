@@ -19,8 +19,8 @@ type SidebarListProps = {
 
 const sidebar: SidebarListProps[] = [
   { href: "/", label: "Home", icon: <House className="size-4" /> },
-  { href: "/add", label: "Add", icon: <CircleVoidPlus className="size-4" /> },
-  { href: "/contact", label: "Option 3", icon: <CircleVoidExclamationPoint className="size-4" /> },
+  { href: "/memos", label: "Memos", icon: <CircleVoidPlus className="size-4" /> },
+  { href: "/history", label: "History", icon: <CircleVoidExclamationPoint className="size-4" /> },
 ]
 
 export default function Sidebar({}: Props): JSX.Element {
