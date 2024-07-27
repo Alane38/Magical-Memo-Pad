@@ -1,5 +1,7 @@
 "use server"
 
+// Rate limiting middleware works with Cloudflare Workers and Next.js API routes (Only production)
+
 let requestCounter: Record<string, number> = {};
 let resetTimer: NodeJS.Timeout;
 

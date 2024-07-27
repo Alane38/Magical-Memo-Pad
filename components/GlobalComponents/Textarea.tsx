@@ -1,11 +1,11 @@
 import React from "react"
 import { INPUT_STYLE } from "@/constants/style"
 
-type Props = React.InputHTMLAttributes<HTMLInputElement> & {
+type Props = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string
 }
 
-export default function Input({ ...props }: Props): JSX.Element {
+export default function Textarea({ ...props }: Props): JSX.Element {
   return (
     <div className="flex flex-col gap-0.5">
       {props.label && (
@@ -13,7 +13,7 @@ export default function Input({ ...props }: Props): JSX.Element {
           {props.label}
         </label>
       )}
-      <input {...props} className={`${INPUT_STYLE} ${props.className}`} />
+      <textarea {...props} className={`${INPUT_STYLE} ${props.className}`} />
     </div>
   )
 }

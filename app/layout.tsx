@@ -1,7 +1,7 @@
 import Sidebar from "@/components/GlobalComponents/Sidebar";
 import "./globals.css";
 import { Oxygen } from "next/font/google"
-import CreateMemoModal from "@/components/Modals/CreateMemoModal";
+import Modal from "@/components/GlobalComponents/Modal";
 
 const oxygen = Oxygen({
   subsets: ["latin"],
@@ -19,7 +19,6 @@ export default function RootLayout({
         {/* <StrictMode>{children}</StrictMode> */}
         <Sidebar />
         {children}
-        <CreateMemoModal />
       </body>
     </html>
   )
