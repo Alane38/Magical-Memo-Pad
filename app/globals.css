@@ -38,15 +38,9 @@
   border: 3px solid rgba(168, 168, 168, 0);
 }
 
-
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -55,16 +49,23 @@ body {
   }
 }
 
-
 /* Typewriter effect */
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blinkTextCursor {
-  0% { border-right-color: rgba(255, 255, 255, 0.75); }
-  100% { border-right-color: transparent; }
+  0% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  100% {
+    border-right-color: transparent;
+  }
 }
 
 .typewriter-text {
@@ -73,6 +74,17 @@ body {
   border-right: 2px solid rgba(255, 255, 255, 0.75);
   white-space: nowrap;
   letter-spacing: 0.15em;
-  animation: typewriter 2s steps(40, end), blinkTextCursor 0.8s steps(40, end) 0.3s;
+  animation:
+    typewriter 2s steps(40, end),
+    blinkTextCursor 0.8s steps(40, end) 0.3s;
   animation-fill-mode: forwards;
+}
+
+.input-shadow {
+  box-shadow: 4.090909004211426px 8.181818008422852px 16.363636016845703px #024382 inset;
+}
+
+.stroke-custom {
+  text-shadow: -0.5px -1px 1px #1F5C96;
+  /* -webkit-text-stroke: 0.5px #1F5C96; */ /* Can't use this because it doesn't work with text-shadow combined */
 }

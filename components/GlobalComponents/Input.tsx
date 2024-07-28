@@ -1,5 +1,4 @@
 import React from "react"
-import { INPUT_STYLE } from "@/constants/style"
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string
@@ -13,7 +12,10 @@ export default function Input({ ...props }: Props): JSX.Element {
           {props.label}
         </label>
       )}
-      <input {...props} className={`${INPUT_STYLE} ${props.className}`} />
+      <input
+        {...props}
+        className={`bg-darkBlue input-shadow stroke-custom rounded-2xl border border-[#08437b] bg-gradient-to-l from-[#004b93] to-[#07498a] px-3.5 py-3 text-sm font-light text-white focus:outline-none ${props.className}`}
+      />
     </div>
   )
 }

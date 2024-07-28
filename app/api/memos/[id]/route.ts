@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+  console.log("jsdhf");
   const { id } = params;
   const { title, content, magicPropertyType } = await req.json();
 
@@ -26,6 +27,20 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 
   if (deletedMemo) {
     return NextResponse.json(deletedMemo);
+  } else {
+    return NextResponse.json({ message: 'Memo not found' }, { status: 404 });
+  }
+}
+
+export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+  const { id } = params;
+
+  const memo = await prisma.memo.findUnique({
+    where: { id: id },
+  });
+
+  if (memo) {
+    return NextResponse.json(memo);
   } else {
     return NextResponse.json({ message: 'Memo not found' }, { status: 404 });
   }
