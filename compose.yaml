@@ -1,0 +1,30 @@
+services:
+  magical-memo-app:
+    container_name: magical-memo-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    # Set environment variables directly in the docker-compose file
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+
+    # Set environment variables based on the .env file
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    restart: always
+    ports:
+      - 3000:3000
+  postgres:
+    container_name: postgres
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    restart: always
+    ports:
+      - 5432:5432

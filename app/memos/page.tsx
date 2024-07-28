@@ -44,7 +44,7 @@ function MemosList() {
   )
 }
 
-export default function Page() {
+function ModalWrapper() {
   const searchParams = useSearchParams()
 
   const [modalAction, setModalAction] = useState<"createMemo" | "deleteMemo" | "updateMemo">("createMemo")
@@ -64,20 +64,30 @@ export default function Page() {
   }, [searchParams])
 
   return (
+    <>
+      {modalAction !== "createMemo" && modalId ? (
+        <Modal action={modalAction} id={modalId} />
+      ) : modalAction === "createMemo" ? (
+        <Modal action={modalAction} />
+      ) : null}
+    </>
+  )
+}
+
+export default function Page() {
+  return (
     <main className="w-screen overflow-hidden text-black">
       <div className="relative size-full">
         <Background>
           <div className="mt-16 p-4">
-          {modalAction !== "createMemo" && modalId ? (
-              <Modal action={modalAction} id={modalId} />
-            ) : modalAction === "createMemo" ? (
-              <Modal action={modalAction} />
-            ) : null}
             <Link href="?action=createMemo">
               <button type="button" className="rounded-full bg-blue-500 p-2 transition duration-300 hover:bg-blue-700">
                 Open Modal
               </button>
             </Link>
+            <Suspense fallback={<LoadingSpinner />}>
+              <ModalWrapper />
+            </Suspense>
             <Suspense fallback={<LoadingSpinner />}>
               <MemosList />
             </Suspense>

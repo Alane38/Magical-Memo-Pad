@@ -4,7 +4,7 @@ import Modal from "@/components/GlobalComponents/Modal"
 import Background from "@/components/HomePage/Background"
 import { useSearchParams } from "next/navigation"
 
-export default function page({ params }: { params: { id: string } }): JSX.Element {
+export default function Page({ params }: { params: { id: string } }): JSX.Element {
   const modalId = params.id
   const researchParams = useSearchParams()
   const modalAction = researchParams.get("action") as "createMemo" | "deleteMemo" | "updateMemo"
