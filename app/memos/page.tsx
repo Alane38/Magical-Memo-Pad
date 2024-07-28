@@ -29,7 +29,7 @@ function MemosList() {
   }, [])
 
   return (
-    <div className="mt-10 grid h-screen w-auto grid-cols-2 gap-4 overflow-y-scroll border p-4 sm:grid-cols-1 md:grid-cols-2">
+    <div className="mt-10 grid  w-auto grid-cols-2 gap-4 overflow-y-scroll p-4 sm:grid-cols-1 md:grid-cols-2 h-[calc(100vh-16rem)]">
       {memos.map((memo, index) => (
         <motion.div
           key={memo.id}
@@ -81,8 +81,8 @@ export default function Page() {
         <Background>
           <div className="mt-16 p-4">
             <Link href="?action=createMemo">
-              <button type="button" className="rounded-full bg-blue-500 p-2 transition duration-300 hover:bg-blue-700">
-                Open Modal
+              <button type="button" className="rounded-xl bg-darkBlue text-white p-2 transition duration-300 hover:bg-darkBlue/70">
+                Create Memo
               </button>
             </Link>
             <Suspense fallback={<LoadingSpinner />}>

@@ -4,7 +4,6 @@ import Link from "next/link"
 import { sanitizeUrl } from "@/lib/purify"
 import Image from "next/image"
 import { XMark } from "../Icons/XMark"
-import { CircleVoidExclamationPoint } from "../Icons/CircleVoidExclamationPoint"
 import { House } from "../Icons/House"
 import { CircleVoidPlus } from "../Icons/CircleVoidPlus"
 import { useState } from "react"
@@ -19,8 +18,7 @@ type SidebarListProps = {
 
 const sidebar: SidebarListProps[] = [
   { href: "/", label: "Home", icon: <House className="size-4" /> },
-  { href: "/memos", label: "Memos", icon: <CircleVoidPlus className="size-4" /> },
-  { href: "/history", label: "History", icon: <CircleVoidExclamationPoint className="size-4" /> },
+  { href: "/memos", label: "Memos", icon: <CircleVoidPlus className="size-4" /> }
 ]
 
 export default function Sidebar({}: Props): JSX.Element {
@@ -45,9 +43,10 @@ export default function Sidebar({}: Props): JSX.Element {
 
   return (
     <>
+      {/* Sidebar */}
       <aside
         id="sidebar-level-sidebar"
-        className={`bg-primary z-40 h-auto ${isOpen ? "w-64" : "w-16"} transition-width overflow-y-auto duration-300`}
+        className={`bg-primary z-40 min-h-screen h-auto ${isOpen ? "w-64" : "w-16"} transition-width overflow-y-auto duration-300`}
         aria-label="Sidebar"
       >
         <div className="mb-6 flex w-full items-center justify-between space-x-2 p-3">

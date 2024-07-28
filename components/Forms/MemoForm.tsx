@@ -50,7 +50,7 @@ const MemoForm = ({ ...props }: Props): JSX.Element => {
       if (!response.ok) {
         throw new Error("Failed to create memo")
       }
-
+      
       setTitle("")
       setContent("")
       setMagicProperty("COLOR_TRANSFORMATION")

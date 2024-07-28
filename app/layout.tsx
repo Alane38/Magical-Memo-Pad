@@ -1,7 +1,6 @@
 import Sidebar from "@/components/GlobalComponents/Sidebar";
-import "./globals.css";
 import { Oxygen } from "next/font/google"
-import Modal from "@/components/GlobalComponents/Modal";
+import "./globals.css";
 
 const oxygen = Oxygen({
   subsets: ["latin"],
